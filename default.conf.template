@@ -3,7 +3,7 @@ server {
     server_name ${SERVER_NAME};
 
     location / {
-        proxy_set_header Authorization "Bearer ${CDR_API_KEY}";
-        proxy_pass ${CDR_API_BASE};
+        proxy_set_header Authorization "Bearer ${BEARER_TOKEN}";
+        proxy_pass ${BASE_URL};
     }
 }

@@ -3,5 +3,6 @@ services:
     build: .
     ports:
      - "8080:80"
-    env_file:
-      - .env
+    env:
+      - BEARER_TOKEN=your_bearer_token
+      - BASE_URL=your_base_url
