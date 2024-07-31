@@ -5,3 +5,10 @@ Update the env variables according to the docker compose file and run the follow
 ```shell
 docker compose up
 ```
+
+## Building
+
+```shell
+docker build -t hub.opensciencegrid.org/macrostrat/api-proxy:latest .
+docker push hub.opensciencegrid.org/macrostrat/api-proxy:latest
+```
