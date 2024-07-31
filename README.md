@@ -9,6 +9,15 @@ docker compose up
 ## Building
 
 ```shell
-docker build -t hub.opensciencegrid.org/macrostrat/api-proxy:latest .
+docker build --platform linux/amd64 -t hub.opensciencegrid.org/macrostrat/api-proxy:latest .
+```
+
+```shell
 docker push hub.opensciencegrid.org/macrostrat/api-proxy:latest
+```
+
+## Running
+
+```shell
+docker run -p 8080:80 --env-file .env hub.opensciencegrid.org/macrostrat/api-proxy:latest
 ```
