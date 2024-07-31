@@ -4,10 +4,17 @@ server {
     listen 8443;
     server_name ${SERVER_NAME};
 
-    location / {
+    location /tiles/ {
         proxy_cache my_cache;
         proxy_cache_valid 200 30m;
         proxy_set_header Authorization "Bearer ${BEARER_TOKEN}";
-        proxy_pass ${BASE_URL};
+        proxy_pass ${BASE_URL}/v1/tiles/;
+    }
+
+        location /maps/ {
+        proxy_cache my_cache;
+        proxy_cache_valid 200 30m;
+        proxy_set_header Authorization "Bearer ${BEARER_TOKEN}";
+        proxy_pass ${BASE_URL}/v1/maps/;
     }
 }
